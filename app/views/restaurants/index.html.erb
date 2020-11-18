@@ -1,7 +1,8 @@
-<p><%= link_to 'Add a new restaurant', new_restaurant_path %></p>
+<h1>Resaturants 🍽</h1>
 
-<ul>
+<ul class="px-2">
   <% @restaurants.each do |restaurant| %>
-    <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+    <%= link_to restaurant.name, restaurant_path(restaurant), class: "text-body" %><br>
   <% end %>
 </ul>
+<p><%= link_to '➕ Add a new restaurant', new_restaurant_path, class: "text-body" %></p>

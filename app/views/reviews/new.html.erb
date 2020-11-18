@@ -12,7 +12,9 @@
     <%= f.input :rating %>
   </div>
 
-  <div class="form-actions">
+  <div class="form-actions btn btn-outline-secondary btn-sm my-2">
     <%= f.button :submit %>
   </div>
 <% end %>
+
+<%= link_to '🏠 Go Back', restaurant_path(@restaurant), class: "text-body" %>

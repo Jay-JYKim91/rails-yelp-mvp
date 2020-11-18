@@ -1,13 +1,30 @@
+<h1>Add a restaurant</h1>
+
 <%= simple_form_for(@restaurant) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs d-inline-block">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="form-inputs">
   <%= f.label :address %>
   <%= f.text_field :address %>
+  </div>
+
+  <div class="form-inputs">
   <%= f.label :phone_number %>
   <%= f.text_field :phone_number %>
+  </div>
+
+  <div class="form-inputs">
   <%= f.label :category %>
   <%= f.text_field :category %>
   <%= f.submit %>
+  </div>
+
 <% end %>
 
-<%= link_to '🏠', restaurants_path %>
+<%= link_to '🏠 Go Back', restaurants_path, class: "text-body" %>
